@@ -1,30 +1,32 @@
-<?php namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
+<?php
+
+namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-
 // VALIDATION: change the requests to match your own file names if you need form validation
 use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest as StoreRequest;
 use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest as UpdateRequest;
 
-class CategoryCrudController extends CrudController {
-
-	public function __construct() {
+class CategoryCrudController extends CrudController
+{
+    public function __construct()
+    {
         parent::__construct();
 
         /*
-		|--------------------------------------------------------------------------
-		| BASIC CRUD INFORMATION
-		|--------------------------------------------------------------------------
-		*/
+        |--------------------------------------------------------------------------
+        | BASIC CRUD INFORMATION
+        |--------------------------------------------------------------------------
+        */
         $this->crud->setModel("Backpack\NewsCRUD\app\Models\Category");
-        $this->crud->setRoute("admin/category");
+        $this->crud->setRoute('admin/category');
         $this->crud->setEntityNameStrings('category', 'categories');
 
         /*
-		|--------------------------------------------------------------------------
-		| COLUMNS AND FIELDS
-		|--------------------------------------------------------------------------
-		*/
+        |--------------------------------------------------------------------------
+        | COLUMNS AND FIELDS
+        |--------------------------------------------------------------------------
+        */
 
         $this->crud->allowAccess('reorder');
         $this->crud->enableReorder('name', 2);
@@ -58,13 +60,13 @@ class CategoryCrudController extends CrudController {
                             ]);
     }
 
-	public function store(StoreRequest $request)
-	{
-		return parent::storeCrud();
-	}
+    public function store(StoreRequest $request)
+    {
+        return parent::storeCrud();
+    }
 
-	public function update(UpdateRequest $request)
-	{
-		return parent::updateCrud();
-	}
+    public function update(UpdateRequest $request)
+    {
+        return parent::updateCrud();
+    }
 }
