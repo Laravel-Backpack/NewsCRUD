@@ -28,7 +28,28 @@ class TagCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setFromDb();
+        // ------ CRUD COLUMNS
+        $this->crud->addColumn([
+                                'name' => 'name',
+                                'label' => 'Name',
+                            ]);
+        $this->crud->addColumn([
+                                'name' => 'slug',
+                                'label' => 'Slug',
+                            ]);
+
+        // ------ CRUD FIELDS
+        $this->crud->addField([
+                                'name' => 'name',
+                                'label' => 'Name',
+                            ]);
+        $this->crud->addField([
+                                'name' => 'slug',
+                                'label' => 'Slug (URL)',
+                                'type' => 'text',
+                                'hint' => 'Will be automatically generated from your name, if left empty.',
+                                // 'disabled' => 'disabled'
+                            ]);
     }
 
     public function store(StoreRequest $request)

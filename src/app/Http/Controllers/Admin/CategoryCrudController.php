@@ -37,6 +37,10 @@ class CategoryCrudController extends CrudController
                                 'label' => 'Name',
                             ]);
         $this->crud->addColumn([
+                                'name' => 'slug',
+                                'label' => 'Slug',
+                            ]);
+        $this->crud->addColumn([
                                 'label' => 'Parent',
                                 'type' => 'select',
                                 'name' => 'parent_id',
@@ -49,6 +53,13 @@ class CategoryCrudController extends CrudController
         $this->crud->addField([
                                 'name' => 'name',
                                 'label' => 'Name',
+                            ]);
+        $this->crud->addField([
+                                'name' => 'slug',
+                                'label' => 'Slug (URL)',
+                                'type' => 'text',
+                                'hint' => 'Will be automatically generated from your name, if left empty.',
+                                // 'disabled' => 'disabled'
                             ]);
         $this->crud->addField([
                                 'label' => 'Parent',

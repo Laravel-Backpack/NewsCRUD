@@ -12,7 +12,7 @@ class Article extends Model implements SluggableInterface
     use CrudTrait;
     use SluggableTrait;
 
-     /*
+    /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
@@ -25,6 +25,10 @@ class Article extends Model implements SluggableInterface
     protected $fillable = ['slug', 'title', 'content', 'image', 'status', 'category_id', 'featured', 'date'];
     // protected $hidden = [];
     // protected $dates = [];
+    protected $casts = [
+        'featured'  => 'boolean',
+        'date'      => 'date',
+    ];
     protected $sluggable = [
         'build_from' => 'slug_or_title',
         'save_to'    => 'slug',
@@ -37,15 +41,6 @@ class Article extends Model implements SluggableInterface
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-
-    public function getFeaturedColumn()
-    {
-        if ($this->featured) {
-            return 'Featured';
-        } else {
-            return '-';
-        }
-    }
 
     /*
     |--------------------------------------------------------------------------
@@ -69,6 +64,13 @@ class Article extends Model implements SluggableInterface
     |--------------------------------------------------------------------------
     */
 
+    public function scopePublished($query)
+    {
+        return $query->where('status', 'PUBLISHED')
+                    ->where('date', '<=', date('Y-m-d'))
+                    ->orderBy('date', 'DESC');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | ACCESORS
@@ -91,23 +93,4 @@ class Article extends Model implements SluggableInterface
     |--------------------------------------------------------------------------
     */
 
-    /**
-     * Featured attribute mutator.
-     *
-     * When setting an Article as featured, remove the featured attribute from all other Articles.
-     *
-     * @param [type] $value [description]
-     */
-    public function setFeaturedAttribute($value)
-    {
-        $this->attributes['featured'] = $value;
-
-        if ($value == 1) {
-            $all_other_articles = self::where('id', '<>', $this->id)->get();
-            foreach ($all_other_articles as $key => $article) {
-                $article->featured = 0;
-                $article->save();
-            }
-        }
-    }
 }

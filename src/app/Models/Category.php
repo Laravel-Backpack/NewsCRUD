@@ -4,12 +4,15 @@ namespace Backpack\NewsCRUD\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Category extends Model
+class Category extends Model implements SluggableInterface
 {
     use CrudTrait;
+    use SluggableTrait;
 
-     /*
+    /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
@@ -61,6 +64,13 @@ class Category extends Model
     | SCOPES
     |--------------------------------------------------------------------------
     */
+
+    public function scopeFirstLevelItems($query)
+    {
+        return $query->where('depth', '1')
+                    ->orWhere('depth', NULL)
+                    ->orderBy('lft', 'ASC');
+    }
 
     /*
     |--------------------------------------------------------------------------

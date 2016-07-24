@@ -45,8 +45,7 @@ class ArticleCrudController extends CrudController
         $this->crud->addColumn([
                                 'name' => 'featured',
                                 'label' => 'Featured',
-                                'type' => 'model_function',
-                                'function_name' => 'getFeaturedColumn',
+                                'type' => 'check'
                             ]);
         $this->crud->addColumn([
                                 'label' => 'Category',
