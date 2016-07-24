@@ -68,7 +68,7 @@ class Category extends Model implements SluggableInterface
     public function scopeFirstLevelItems($query)
     {
         return $query->where('depth', '1')
-                    ->orWhere('depth', NULL)
+                    ->orWhere('depth', null)
                     ->orderBy('lft', 'ASC');
     }
 

@@ -92,5 +92,4 @@ class Article extends Model implements SluggableInterface
     | MUTATORS
     |--------------------------------------------------------------------------
     */
-
 }
