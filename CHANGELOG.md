@@ -22,6 +22,18 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## 1.0.2 - 2016-07-24
+
+### Added
+- Fixed Category children relationship.
+
+
+## 1.0.1 - 2016-07-23
+
+### Added
+- Backpack\CRUD 3.0 dependency.
+
+
 ## 1.0.0 - 2016-05-27
 
 ### Added
