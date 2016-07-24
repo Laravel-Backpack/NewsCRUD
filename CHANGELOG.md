@@ -22,7 +22,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
-## 1.0.2 - 2016-07-24
+## 1.0.3 - 2016-07-24
 
 ### Added
 - Fixed Category children relationship.
