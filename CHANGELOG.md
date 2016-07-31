@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## 2.0.3 - 2016-07-30
+
+### Added
+- fixed various bugs;
+
+
+
 ## 2.0.0 - 2016-07-24
 
 ### Added
