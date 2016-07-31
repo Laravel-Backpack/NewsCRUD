@@ -22,6 +22,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## 2.0.3 - 2016-07-31
+
+### Fixed
+- Working bogus unit tests.
+
 
 ## 2.0.2 - 2016-07-31
 
