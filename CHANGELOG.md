@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## 2.0.4 - 2016-08-30
+
+### Added
+- Eloquent Sluggable requirement in composer.json
+
+
 ## 2.0.3 - 2016-07-31
 
 ### Fixed
