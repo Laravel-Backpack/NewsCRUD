@@ -121,6 +121,8 @@ class ArticleCrudController extends CrudController
                                 'label' => 'Featured item',
                                 'type' => 'checkbox',
                             ]);
+
+        $this->crud->enableAjaxTable();
     }
 
     public function store(StoreRequest $request)

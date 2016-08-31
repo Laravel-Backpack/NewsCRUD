@@ -49,6 +49,9 @@ class NewsCRUDServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // register its dependencies
+        $this->app->register(\Cviebrock\EloquentSluggable\ServiceProvider::class);
+
         $this->setupRoutes($this->app->router);
     }
 }

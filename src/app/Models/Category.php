@@ -4,13 +4,12 @@ namespace Backpack\NewsCRUD\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\Sluggable;
 
-class Category extends Model implements SluggableInterface
+class Category extends Model
 {
     use CrudTrait;
-    use SluggableTrait;
+    use Sluggable;
 
     /*
     |--------------------------------------------------------------------------
@@ -25,12 +24,20 @@ class Category extends Model implements SluggableInterface
     protected $fillable = ['name', 'parent_id'];
     // protected $hidden = [];
     // protected $dates = [];
-    protected $sluggable = [
-        'build_from' => 'slug_or_name',
-        'save_to'    => 'slug',
-        'on_update'  => true,
-        'unique'     => true,
-    ];
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'slug_or_name',
+            ],
+        ];
+    }
 
     /*
     |--------------------------------------------------------------------------
