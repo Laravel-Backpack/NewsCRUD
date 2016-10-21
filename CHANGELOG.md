@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+
+## 2.1.1 - 2016-10-22
+
+### Added
+- SluggableScopeHelpers trait to all models, in order for findBySlug() method to work;
+
+
 ## 2.1.0 - 2016-08-31
 
 ### Added
