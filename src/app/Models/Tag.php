@@ -5,11 +5,12 @@ namespace Backpack\NewsCRUD\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 class Tag extends Model
 {
     use CrudTrait;
-    use Sluggable;
+    use Sluggable, SluggableScopeHelpers;
 
     /*
     |--------------------------------------------------------------------------
