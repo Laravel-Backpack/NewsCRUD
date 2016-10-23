@@ -19,7 +19,7 @@ class CategoryCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
         $this->crud->setModel("Backpack\NewsCRUD\app\Models\Category");
-        $this->crud->setRoute('admin/category');
+        $this->crud->setRoute(config('backpack.base.route_prefix', 'admin').'/category');
         $this->crud->setEntityNameStrings('category', 'categories');
 
         /*
