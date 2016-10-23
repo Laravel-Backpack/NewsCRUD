@@ -23,6 +23,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 
 
+
+## 2.1.2 - 2016-10-23
+
+### Fixed
+- routes now respect the route_prefix set in the base package config file;
+
+
 ## 2.1.1 - 2016-10-22
 
 ### Added
