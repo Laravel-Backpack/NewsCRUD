@@ -19,7 +19,7 @@ class ArticleCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
         $this->crud->setModel("Backpack\NewsCRUD\app\Models\Article");
-        $this->crud->setRoute('admin/article');
+        $this->crud->setRoute(config('backpack.base.route_prefix', 'admin').'/article');
         $this->crud->setEntityNameStrings('article', 'articles');
 
         /*
