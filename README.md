@@ -9,6 +9,11 @@
 
 An admin panel for menu items on Laravel 5, using [Backpack\CRUD](https://github.com/Laravel-Backpack/crud). Add, edit, reorder, nest, rename menu items and link them to [Backpack\PageManager](https://github.com/Laravel-Backpack/pagemanager) pages, external link or custom internal link.
 
+
+> ### Security updates and breaking changes
+> Please **[subscribe to the Backpack Newsletter](http://eepurl.com/bUEGjf)** so you can find out about any security updates, breaking changes or major features. We send an email every 1-2 months.
+
+
 ## Install
 
 Since NewsCRUD is just a Backpack\CRUD example, you can choose to install it one of two ways.
@@ -130,6 +135,8 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details
 ## Security
 
 If you discover any security related issues, please email hello@tabacitu.ro instead of using the issue tracker.
+
+Please **[subscribe to the Backpack Newsletter](http://eepurl.com/bUEGjf)** so you can find out about any security updates, breaking changes or major features. We send an email every 1-2 months.
 
 ## Credits
 
