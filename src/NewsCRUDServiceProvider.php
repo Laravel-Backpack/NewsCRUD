@@ -2,8 +2,8 @@
 
 namespace Backpack\NewsCRUD;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
+use Illuminate\Support\ServiceProvider;
 
 class NewsCRUDServiceProvider extends ServiceProvider
 {
