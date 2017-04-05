@@ -22,6 +22,10 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## 2.1.3 - 2017-04-05
+
+### Fixed
+- In category creation page, user can define custom slug for category;
 
 
 ## 2.1.2 - 2016-10-23
