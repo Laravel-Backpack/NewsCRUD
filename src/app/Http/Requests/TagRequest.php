@@ -2,8 +2,6 @@
 
 namespace Backpack\NewsCRUD\app\Http\Requests;
 
-use App\Http\Requests\Request;
-
 class TagRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
 {
     /**
