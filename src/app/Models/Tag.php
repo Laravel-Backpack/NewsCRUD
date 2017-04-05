@@ -54,7 +54,7 @@ class Tag extends Model
 
     public function articles()
     {
-        return $this->hasMany('Backpack\NewsCRUD\app\Models\Article');
+        return $this->belongsToMany('Backpack\NewsCRUD\app\Models\Article', 'article_tag');
     }
 
     /*

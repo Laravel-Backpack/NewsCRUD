@@ -26,6 +26,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Fixed
 - In category creation page, user can define custom slug for category;
+- Tag relationship to Article;
 
 
 ## 2.1.2 - 2016-10-23
