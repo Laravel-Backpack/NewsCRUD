@@ -7,7 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-An admin panel for menu items on Laravel 5, using [Backpack\CRUD](https://github.com/Laravel-Backpack/crud). Add, edit, reorder, nest, rename menu items and link them to [Backpack\PageManager](https://github.com/Laravel-Backpack/pagemanager) pages, external link or custom internal link.
+An admin panel for news articles on Laravel 5, using [Backpack\CRUD](https://github.com/Laravel-Backpack/crud). Write articles, with categories and tags.
 
 
 > ### Security updates and breaking changes
