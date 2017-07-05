@@ -52,6 +52,8 @@ class NewsCRUDServiceProvider extends ServiceProvider
         // register its dependencies
         $this->app->register(\Cviebrock\EloquentSluggable\ServiceProvider::class);
 
-        $this->setupRoutes($this->app->router);
+        if(!config('backpack.base.skip_all_backpack_routes',false)){
+            $this->setupRoutes($this->app->router);            
+        }
     }
 }
