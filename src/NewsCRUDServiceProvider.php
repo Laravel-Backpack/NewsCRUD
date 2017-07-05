@@ -15,6 +15,13 @@ class NewsCRUDServiceProvider extends ServiceProvider
     protected $defer = false;
 
     /**
+     * Where the route file lives, both inside the package and in the app (if overwritten).
+     *
+     * @var bool
+     */
+    public $routeFilePath = '/routes/backpack/newscrud.php';
+
+    /**
      * Perform post-registration booting of services.
      *
      * @return void
@@ -23,23 +30,6 @@ class NewsCRUDServiceProvider extends ServiceProvider
     {
         // publish migrations
         $this->publishes([__DIR__.'/database/migrations' => database_path('migrations')], 'migrations');
-    }
-
-    /**
-     * Define the routes for the application.
-     *
-     * @param  \Illuminate\Routing\Router  $router
-     * @return void
-     */
-    public function setupRoutes(Router $router)
-    {
-        $router->group(['namespace' => 'Backpack\NewsCRUD\app\Http\Controllers'], function ($router) {
-            \Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['web', 'admin'], 'namespace' => 'Admin'], function () {
-                \CRUD::resource('article', 'ArticleCrudController');
-                \CRUD::resource('category', 'CategoryCrudController');
-                \CRUD::resource('tag', 'TagCrudController');
-            });
-        });
     }
 
     /**
@@ -52,8 +42,26 @@ class NewsCRUDServiceProvider extends ServiceProvider
         // register its dependencies
         $this->app->register(\Cviebrock\EloquentSluggable\ServiceProvider::class);
 
-        if(!config('backpack.base.skip_all_backpack_routes',false)){
-            $this->setupRoutes($this->app->router);            
+        // setup the routes
+        $this->setupRoutes($this->app->router);
+    }
+
+    /**
+     * Define the routes for the application.
+     *
+     * @param  \Illuminate\Routing\Router  $router
+     * @return void
+     */
+    public function setupRoutes(Router $router)
+    {
+        // by default, use the routes file provided in vendor
+        $routeFilePathInUse = __DIR__.$this->routeFilePath;
+
+        // but if there's a file with the same name in routes/backpack, use that one
+        if (file_exists(base_path().$this->routeFilePath)) {
+            $routeFilePathInUse = base_path().$this->routeFilePath;
         }
+
+        $this->loadRoutesFrom($routeFilePathInUse);
     }
 }
