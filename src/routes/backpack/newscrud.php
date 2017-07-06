@@ -5,7 +5,7 @@
 | Backpack\NewsCRUD Routes
 |--------------------------------------------------------------------------
 |
-| This file is where you may define or change all of the routes that are
+| This file is where you may define all of the routes that are
 | handled by the Backpack\NewsCRUD package.
 |
 */
