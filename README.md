@@ -128,6 +128,13 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 $ composer test
 ```
 
+## Overwriting functionality
+
+If you need to modify how this works in a project: 
+- create a ```routes/backpack/newscrud.php``` file; the package will see that, and load _your_ routes file, instead of the one in the package; 
+- create controllers/models that extend the ones in the package, and use those in your new routes file;
+- modify anything you'd like in the new controllers/models;
+
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
