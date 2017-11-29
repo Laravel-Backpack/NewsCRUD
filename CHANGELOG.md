@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## 2.1.6 - 2017-11-29
+
+### Added
+- package auto-discovery;
+
+
 ## 2.1.4 - 2017-07-06
 
 ### Added
