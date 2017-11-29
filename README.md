@@ -18,7 +18,7 @@ An admin panel for news articles on Laravel 5, using [Backpack\CRUD](https://git
 
 Since NewsCRUD is just a Backpack\CRUD example, you can choose to install it one of two ways.
 
-**(A) Download and place files in your application** (recommended)
+**(A) Download and place files in your application** (recommended; remember to also ```composer require cviebrock/eloquent-sluggable```)
 
 or
 
