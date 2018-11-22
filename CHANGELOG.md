@@ -21,6 +21,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+## 2.1.8 - 2018-11-22
+
+### Fixed
+- travis config file;
+
+
 ## 2.1.7 - 2018-11-22
 
 ### Fixed
