@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "backpack/crud": "^3.0.6",
+        "backpack/crud": "3.4.*|3.5.*",
         "cviebrock/eloquent-sluggable": "^4.0"
     },
     "require-dev": {
