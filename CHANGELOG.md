@@ -21,6 +21,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+## 2.1.9 - 2018-11-26
+
+### Fixed
+- authorization in form request files;
+
+
 ## 2.1.8 - 2018-11-22
 
 ### Fixed
