@@ -21,6 +21,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+## 2.1.10 - 2019-03-12
+
+### Added
+- support for Laravel 5.8 and CRUD 3.6;
+
 ## 2.1.9 - 2018-11-26
 
 ### Fixed
