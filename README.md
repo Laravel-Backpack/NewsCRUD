@@ -82,7 +82,7 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
 1) In your terminal, run:
 
 ``` bash
-$ composer require backpack/newscrud
+composer require backpack/newscrud
 ```
 
 2) Then add the service providers to your config/app.php file:
