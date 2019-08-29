@@ -35,7 +35,7 @@ class ArticleCrudController extends CrudController
         */
         $this->crud->enableBulkActions();
         $this->crud->addBulkDeleteButton();
-        
+
         $this->crud->allowAccess('clone');
         $this->crud->addButton('bottom', 'bulk_clone', 'view', 'crud::buttons.bulk_clone', 'beginning');
 
