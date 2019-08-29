@@ -9,10 +9,14 @@ use Backpack\NewsCRUD\app\Http\Requests\TagRequest as UpdateRequest;
 
 class TagCrudController extends CrudController
 {
-    public function __construct()
-    {
-        parent::__construct();
+    use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\SaveActions;
 
+    public function setup()
+    {
         /*
         |--------------------------------------------------------------------------
         | BASIC CRUD INFORMATION
@@ -54,11 +58,11 @@ class TagCrudController extends CrudController
 
     public function store(StoreRequest $request)
     {
-        return parent::storeCrud();
+        return $this->storeEntry($request);
     }
 
     public function update(UpdateRequest $request)
     {
-        return parent::updateCrud();
+        return $this->updateEntry($request);
     }
 }

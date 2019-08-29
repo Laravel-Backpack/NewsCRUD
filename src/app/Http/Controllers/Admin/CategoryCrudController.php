@@ -9,10 +9,14 @@ use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest as UpdateRequest;
 
 class CategoryCrudController extends CrudController
 {
-    public function __construct()
+    use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\SaveActions;
+    
+    public function setup()
     {
-        parent::__construct();
-
         /*
         |--------------------------------------------------------------------------
         | BASIC CRUD INFORMATION
@@ -73,11 +77,11 @@ class CategoryCrudController extends CrudController
 
     public function store(StoreRequest $request)
     {
-        return parent::storeCrud();
+        return $this->storeEntry($request);
     }
 
     public function update(UpdateRequest $request)
     {
-        return parent::updateCrud();
+        return $this->updateEntry($request);
     }
 }

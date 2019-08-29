@@ -9,10 +9,17 @@ use Backpack\NewsCRUD\app\Http\Requests\ArticleRequest as UpdateRequest;
 
 class ArticleCrudController extends CrudController
 {
-    public function __construct()
-    {
-        parent::__construct();
+    use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\BulkDeleteOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\CloneOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\BulkCloneOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\SaveActions;
 
+    public function setup()
+    {
         /*
         |--------------------------------------------------------------------------
         | BASIC CRUD INFORMATION
@@ -21,6 +28,17 @@ class ArticleCrudController extends CrudController
         $this->crud->setModel("Backpack\NewsCRUD\app\Models\Article");
         $this->crud->setRoute(config('backpack.base.route_prefix', 'admin').'/article');
         $this->crud->setEntityNameStrings('article', 'articles');
+
+        /*
+        |--------------------------------------------------------------------------
+        | MISCELLANEOUS OPERATIONS
+        |--------------------------------------------------------------------------
+        */
+        $this->crud->enableBulkActions();
+        $this->crud->addBulkDeleteButton();
+        
+        $this->crud->allowAccess('clone');
+        $this->crud->addButton('bottom', 'bulk_clone', 'view', 'crud::buttons.bulk_clone', 'beginning');
 
         /*
         |--------------------------------------------------------------------------
@@ -121,17 +139,15 @@ class ArticleCrudController extends CrudController
                                 'label' => 'Featured item',
                                 'type' => 'checkbox',
                             ]);
-
-        $this->crud->enableAjaxTable();
     }
 
     public function store(StoreRequest $request)
     {
-        return parent::storeCrud();
+        return $this->storeEntry($request);
     }
 
     public function update(UpdateRequest $request)
     {
-        return parent::updateCrud();
+        return $this->updateEntry($request);
     }
 }
