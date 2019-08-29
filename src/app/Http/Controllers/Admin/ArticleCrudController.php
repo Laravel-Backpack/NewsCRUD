@@ -16,7 +16,6 @@ class ArticleCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\BulkDeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CloneOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\BulkCloneOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\SaveActions;
 
     public function setup()
     {
