@@ -2,12 +2,10 @@
 
 namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
-use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\CrudPanelFacade as CRUD;
-
+use Backpack\CRUD\app\Http\Controllers\CrudController;
 // VALIDATION: change the requests to match your own file names if you need form validation
 use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest as StoreRequest;
-use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest as UpdateRequest;
 
 class CategoryCrudController extends CrudController
 {
