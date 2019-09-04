@@ -43,7 +43,7 @@ class CategoryCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(CategoryRequest::class);
-        
+
         CRUD::addField([
             'name' => 'name',
             'label' => 'Name',

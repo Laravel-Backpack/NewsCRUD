@@ -59,7 +59,6 @@ class ArticleCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
         $this->crud->operation(['create', 'update'], function () {
-
             $this->crud->setValidation(ArticleRequest::class);
 
             $this->crud->addField([

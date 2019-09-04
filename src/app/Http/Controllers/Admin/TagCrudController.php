@@ -2,8 +2,8 @@
 
 namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
-use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\NewsCRUD\app\Http\Requests\TagRequest;
+use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 class TagCrudController extends CrudController
 {
