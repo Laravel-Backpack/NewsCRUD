@@ -25,7 +25,7 @@ class CategoryCrudController extends CrudController
         CRUD::setEntityNameStrings('category', 'categories');
     }
 
-    protected function setupListConfiguration()
+    protected function setupListOperation()
     {
         CRUD::addColumn('name');
         CRUD::addColumn('slug');
@@ -38,12 +38,12 @@ class CategoryCrudController extends CrudController
         ]);
     }
 
-    protected function setupShowConfiguration()
+    protected function setupShowOperation()
     {
-        return $this->setupListConfiguration();
+        return $this->setupListOperation();
     }
 
-    protected function setupCreateConfiguration()
+    protected function setupCreateOperation()
     {
         // CRUD::setValidation(StoreRequest::class);
         CRUD::addField([
@@ -66,12 +66,12 @@ class CategoryCrudController extends CrudController
         ]);
     }
 
-    protected function setupUpdateConfiguration()
+    protected function setupUpdateOperation()
     {
-        return $this->setupCreateConfiguration();
+        return $this->setupCreateOperation();
     }
 
-    protected function setupReorderConfiguration()
+    protected function setupReorderOperation()
     {
         CRUD::set('reorder.label', 'name');
         CRUD::set('reorder.max_level', 2);
