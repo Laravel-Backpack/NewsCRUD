@@ -4,8 +4,7 @@ namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
 use Backpack\CRUD\CrudPanelFacade as CRUD;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-// VALIDATION: change the requests to match your own file names if you need form validation
-use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest as StoreRequest;
+use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest;
 
 class CategoryCrudController extends CrudController
 {
@@ -43,7 +42,8 @@ class CategoryCrudController extends CrudController
 
     protected function setupCreateOperation()
     {
-        // CRUD::setValidation(StoreRequest::class);
+        CRUD::setValidation(CategoryRequest::class);
+        
         CRUD::addField([
             'name' => 'name',
             'label' => 'Name',
@@ -66,7 +66,7 @@ class CategoryCrudController extends CrudController
 
     protected function setupUpdateOperation()
     {
-        return $this->setupCreateOperation();
+        $this->setupCreateOperation();
     }
 
     protected function setupReorderOperation()

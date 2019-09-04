@@ -3,9 +3,7 @@
 namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-// VALIDATION: change the requests to match your own file names if you need form validation
-use Backpack\NewsCRUD\app\Http\Requests\ArticleRequest as StoreRequest;
-use Backpack\NewsCRUD\app\Http\Requests\ArticleRequest as UpdateRequest;
+use Backpack\NewsCRUD\app\Http\Requests\ArticleRequest;
 
 class ArticleCrudController extends CrudController
 {
@@ -61,6 +59,9 @@ class ArticleCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
         $this->crud->operation(['create', 'update'], function () {
+
+            $this->crud->setValidation(ArticleRequest::class);
+
             $this->crud->addField([
                 'name' => 'title',
                 'label' => 'Title',
@@ -117,15 +118,5 @@ class ArticleCrudController extends CrudController
                 'type' => 'checkbox',
             ]);
         });
-    }
-
-    public function store(StoreRequest $request)
-    {
-        return $this->storeEntry($request);
-    }
-
-    public function update(UpdateRequest $request)
-    {
-        return $this->updateEntry($request);
     }
 }

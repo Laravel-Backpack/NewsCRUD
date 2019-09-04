@@ -3,9 +3,7 @@
 namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-// VALIDATION: change the requests to match your own file names if you need form validation
-use Backpack\NewsCRUD\app\Http\Requests\TagRequest as StoreRequest;
-use Backpack\NewsCRUD\app\Http\Requests\TagRequest as UpdateRequest;
+use Backpack\NewsCRUD\app\Http\Requests\TagRequest;
 
 class TagCrudController extends CrudController
 {
@@ -22,13 +20,13 @@ class TagCrudController extends CrudController
         $this->crud->setFromDb();
     }
 
-    public function store(StoreRequest $request)
+    protected function setupCreateOperation()
     {
-        return $this->storeEntry($request);
+        $this->crud->setValidation(TagRequest::class);
     }
 
-    public function update(UpdateRequest $request)
+    protected function setupUpdateOperation()
     {
-        return $this->updateEntry($request);
+        $this->crud->setValidation(TagRequest::class);
     }
 }
