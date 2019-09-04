@@ -33,7 +33,7 @@ class ArticleCrudController extends CrudController
         | LIST OPERATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->operation('list', function() {
+        $this->crud->operation('list', function () {
             $this->crud->addColumn('title');
             $this->crud->addColumn([
                 'name' => 'date',
@@ -60,7 +60,7 @@ class ArticleCrudController extends CrudController
         | CREATE & UPDATE OPERATIONS
         |--------------------------------------------------------------------------
         */
-        $this->crud->operation(['create', 'update'], function() {
+        $this->crud->operation(['create', 'update'], function () {
             $this->crud->addField([
                 'name' => 'title',
                 'label' => 'Title',
