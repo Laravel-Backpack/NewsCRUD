@@ -16,43 +16,10 @@ class TagCrudController extends CrudController
 
     public function setup()
     {
-        /*
-        |--------------------------------------------------------------------------
-        | BASIC CRUD INFORMATION
-        |--------------------------------------------------------------------------
-        */
         $this->crud->setModel("Backpack\NewsCRUD\app\Models\Tag");
         $this->crud->setRoute(config('backpack.base.route_prefix', 'admin').'/tag');
         $this->crud->setEntityNameStrings('tag', 'tags');
-
-        /*
-        |--------------------------------------------------------------------------
-        | COLUMNS AND FIELDS
-        |--------------------------------------------------------------------------
-        */
-
-        // ------ CRUD COLUMNS
-        $this->crud->addColumn([
-                                'name' => 'name',
-                                'label' => 'Name',
-                            ]);
-        $this->crud->addColumn([
-                                'name' => 'slug',
-                                'label' => 'Slug',
-                            ]);
-
-        // ------ CRUD FIELDS
-        $this->crud->addField([
-                                'name' => 'name',
-                                'label' => 'Name',
-                            ]);
-        $this->crud->addField([
-                                'name' => 'slug',
-                                'label' => 'Slug (URL)',
-                                'type' => 'text',
-                                'hint' => 'Will be automatically generated from your name, if left empty.',
-                                // 'disabled' => 'disabled'
-                            ]);
+        $this->crud->setFromDb();
     }
 
     public function store(StoreRequest $request)
