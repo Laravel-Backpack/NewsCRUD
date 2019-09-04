@@ -4,22 +4,13 @@ All Notable changes to `NewsCRUD` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-## NEXT - YYYY-MM-DD
+-------------
+
+## 2.1.11 - 2019-09-04
 
 ### Added
-- Nothing
+- support for Laravel 6;
 
-### Deprecated
-- Nothing
-
-### Fixed
-- Nothing
-
-### Removed
-- Nothing
-
-### Security
-- Nothing
 
 ## 2.1.10 - 2019-03-12
 
