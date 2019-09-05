@@ -56,9 +56,9 @@ php artisan migrate
 ```
 Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['web', 'auth'], 'namespace' => 'Admin'], function () {
     // Backpack\NewsCRUD
-    CRUD::resource('article', 'ArticleCrudController');
-    CRUD::resource('category', 'CategoryCrudController');
-    CRUD::resource('tag', 'TagCrudController');
+    Route::crud('article', 'ArticleCrudController');
+    Route::crud('category', 'CategoryCrudController');
+    Route::crud('tag', 'TagCrudController');
 });
 ```
 
@@ -85,25 +85,19 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
 composer require backpack/newscrud
 ```
 
-2) Then add the service providers to your config/app.php file:
-
-```
-'Backpack\NewsCRUD\NewsCRUDServiceProvider',
-```
-
-3) Publish the migration:
+2) Publish the migration:
 
 ```
 php artisan vendor:publish --provider="Backpack\NewsCRUD\NewsCRUDServiceProvider"
 ```
 
-4) Run the migration to have the database table we need:
+3) Run the migration to have the database table we need:
 
 ```
 php artisan migrate
 ```
 
-5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
+4) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
 
 ```html
 <li class="nav-item nav-dropdown">
