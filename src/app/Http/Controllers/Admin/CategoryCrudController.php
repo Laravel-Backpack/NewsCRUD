@@ -2,7 +2,7 @@
 
 namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
-use Backpack\CRUD\CrudPanelFacade as CRUD;
+use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest;
 
