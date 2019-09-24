@@ -6,6 +6,17 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------------
 
+## 3.0.0 - 2019-09-24
+
+### Added
+- support for Backpack v4;
+
+### Removed
+- support for Backpack v3;
+
+-------------
+
+
 ## 2.1.11 - 2019-09-04
 
 ### Added
