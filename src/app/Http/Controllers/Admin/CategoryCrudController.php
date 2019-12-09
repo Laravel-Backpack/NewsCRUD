@@ -3,8 +3,8 @@
 namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest;
 
 class CategoryCrudController extends CrudController
 {
