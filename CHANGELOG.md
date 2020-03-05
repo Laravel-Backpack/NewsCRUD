@@ -10,6 +10,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Changed
 - upgraded PHPUnit;
+- Added Release Drafter Github Probot;
 
 
 ## 3.0.2 - 2020-03-05
