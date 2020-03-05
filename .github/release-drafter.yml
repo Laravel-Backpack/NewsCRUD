@@ -11,8 +11,11 @@ categories:
       - 'fix'
       - 'bugfix'
       - 'bug'
-      - 'changed'
       - 'fixed'
+  - title: '⚙️ Changes'
+    labels:
+      - 'changed'
+      - 'dependencies'
   - title: '🧰 Removed'
     label: 'removed'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
