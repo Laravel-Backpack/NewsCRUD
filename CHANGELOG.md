@@ -6,6 +6,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------------
 
+## 3.0.2 - 2020-03-05
+
+### Added
+- support for Laravel 7;
+
 
 ## 3.0.1 - 2019-12-17
 
