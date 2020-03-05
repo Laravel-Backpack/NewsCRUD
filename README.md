@@ -7,7 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-An admin panel for news articles on Laravel 6 or 5, using [Backpack\CRUD](https://github.com/Laravel-Backpack/crud). Write articles, with categories and tags.
+An admin panel for news articles on Laravel 5-7, using [Backpack\CRUD](https://github.com/Laravel-Backpack/crud). Write articles, with categories and tags.
 
 
 > ### Security updates and breaking changes
