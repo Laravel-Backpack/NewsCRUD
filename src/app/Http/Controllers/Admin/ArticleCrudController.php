@@ -15,6 +15,7 @@ class ArticleCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\BulkDeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\FetchOperation;
 
     public function setup()
     {
@@ -23,7 +24,7 @@ class ArticleCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel("Backpack\NewsCRUD\app\Models\Article");
+        $this->crud->setModel(\Backpack\NewsCRUD\app\Models\Article::class);
         $this->crud->setRoute(config('backpack.base.route_prefix', 'admin').'/article');
         $this->crud->setEntityNameStrings('article', 'articles');
 
@@ -94,18 +95,22 @@ class ArticleCrudController extends CrudController
             ]);
             $this->crud->addField([
                 'label' => 'Category',
-                'type' => 'select2',
+                'type' => 'relationship',
                 'name' => 'category_id',
                 'entity' => 'category',
                 'attribute' => 'name',
+                'inline_create' => true,
+                'ajax' => true,
             ]);
             $this->crud->addField([
                 'label' => 'Tags',
-                'type' => 'select2_multiple',
+                'type' => 'relationship',
                 'name' => 'tags', // the method that defines the relationship in your Model
                 'entity' => 'tags', // the method that defines the relationship in your Model
                 'attribute' => 'name', // foreign key attribute that is shown to user
                 'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
+                'inline_create' => ['entity' => 'tag'],
+                'ajax' => true,
             ]);
             $this->crud->addField([
                 'name' => 'status',
@@ -118,5 +123,23 @@ class ArticleCrudController extends CrudController
                 'type' => 'checkbox',
             ]);
         });
+    }
+
+    /**
+     * Respond to AJAX calls from the select2 with entries from the Category model.
+     * @return JSON
+     */
+    public function fetchCategory()
+    {
+        return $this->fetch(\Backpack\NewsCRUD\app\Models\Category::class);
+    }
+
+    /**
+     * Respond to AJAX calls from the select2 with entries from the Tag model.
+     * @return JSON
+     */
+    public function fetchTags()
+    {
+        return $this->fetch(\Backpack\NewsCRUD\app\Models\Tag::class);
     }
 }
