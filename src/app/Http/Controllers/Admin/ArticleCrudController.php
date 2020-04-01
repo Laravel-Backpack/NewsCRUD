@@ -76,7 +76,7 @@ class ArticleCrudController extends CrudController
             ], function () {
                 return \Backpack\NewsCRUD\app\Models\Tag::all()->keyBy('id')->pluck('name', 'id')->toArray();
             }, function ($values) { // if the filter is active
-                $this->crud->query = $this->crud->query->whereHas('tags', function($q) use ($values) {
+                $this->crud->query = $this->crud->query->whereHas('tags', function ($q) use ($values) {
                     foreach (json_decode($values) as $key => $value) {
                         if ($key == 0) {
                             $q->where('tags.id', $value);
