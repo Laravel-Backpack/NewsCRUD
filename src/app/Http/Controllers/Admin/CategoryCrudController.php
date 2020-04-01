@@ -33,11 +33,24 @@ class CategoryCrudController extends CrudController
             'entity' => 'parent',
             'attribute' => 'name',
         ]);
+        CRUD::addColumn([   // select_multiple: n-n relationship (with pivot table)
+            'label'     => 'Articles', // Table column heading
+            'type'      => 'relationship_count',
+            'name'      => 'articles', // the method that defines the relationship in your Model
+            'wrapper'   => [
+                'href' => function ($crud, $column, $entry, $related_key) {
+                    return backpack_url('article?category_id='.$entry->getKey());
+                },
+            ],
+        ]);
     }
 
     protected function setupShowOperation()
     {
-        return $this->setupListOperation();
+        $this->setupListOperation();
+
+        CRUD::addColumn('created_at');
+        CRUD::addColumn('updated_at');
     }
 
     protected function setupCreateOperation()

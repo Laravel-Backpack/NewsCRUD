@@ -51,7 +51,40 @@ class ArticleCrudController extends CrudController
                 'name' => 'category_id',
                 'entity' => 'category',
                 'attribute' => 'name',
+                'wrapper'   => [
+                    'href' => function ($crud, $column, $entry, $related_key) {
+                        return backpack_url('category/'.$related_key.'/show');
+                    },
+                ],
             ]);
+
+            $this->crud->addFilter([ // select2 filter
+                'name' => 'category_id',
+                'type' => 'select2',
+                'label'=> 'Category',
+            ], function () {
+                return \Backpack\NewsCRUD\app\Models\Category::all()->keyBy('id')->pluck('name', 'id')->toArray();
+            }, function ($value) { // if the filter is active
+                $this->crud->addClause('where', 'category_id', $value);
+            });
+
+            $this->crud->addFilter([ // select2_multiple filter
+                'name' => 'tags',
+                'type' => 'select2_multiple',
+                'label'=> 'Tags',
+            ], function () {
+                return \Backpack\NewsCRUD\app\Models\Tag::all()->keyBy('id')->pluck('name', 'id')->toArray();
+            }, function ($values) { // if the filter is active
+                $this->crud->query = $this->crud->query->whereHas('tags', function($q) use ($values) {
+                    foreach (json_decode($values) as $key => $value) {
+                        if ($key == 0) {
+                            $q->where('tags.id', $value);
+                        } else {
+                            $q->orWhere('tags.id', $value);
+                        }
+                    }
+                });
+            });
         });
 
         /*
