@@ -6,6 +6,20 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------------
 
+## 4.0.0 - 2020-05-06
+
+### Added
+- support for Backpack 4.1
+- column anchors to CategoryCRUD;
+- filters to ArticleCRUD;
+- relationship columns to ArticleCRUD, along with inlineCreate for both Category and Tags;
+
+### Removed
+- support for Backpack 4.0
+
+
+-------------
+
 ## 3.0.3 - 2020-03-05
 
 ### Changed
