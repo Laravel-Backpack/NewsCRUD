@@ -58,6 +58,7 @@ class ArticleCrudController extends CrudController
                     },
                 ],
             ]);
+            $this->crud->addColumn('tags');
 
             $this->crud->addFilter([ // select2 filter
                 'name' => 'category_id',
