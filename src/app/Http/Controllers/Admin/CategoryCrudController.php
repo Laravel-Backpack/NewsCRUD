@@ -27,13 +27,7 @@ class CategoryCrudController extends CrudController
     {
         CRUD::addColumn('name');
         CRUD::addColumn('slug');
-        CRUD::addColumn([
-            'label' => 'Parent',
-            'type' => 'select',
-            'name' => 'parent_id',
-            'entity' => 'parent',
-            'attribute' => 'name',
-        ]);
+        CRUD::addColumn('parent');
         CRUD::addColumn([   // select_multiple: n-n relationship (with pivot table)
             'label'     => 'Articles', // Table column heading
             'type'      => 'relationship_count',
