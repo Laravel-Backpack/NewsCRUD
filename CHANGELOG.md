@@ -5,6 +5,12 @@ All Notable changes to `NewsCRUD` will be documented in this file.
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
 -------------
+IMPORTANT
+-------------
+
+We no longer use this file to keep track of changes, after version 4.0.0. Please see our repo's Releases tab, on Github - https://github.com/Laravel-Backpack/NewsCRUD/releases
+
+-------------
 
 ## 4.0.0 - 2020-05-06
 
