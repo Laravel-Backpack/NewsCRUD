@@ -34,7 +34,13 @@ class ArticleCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
         $this->crud->operation('list', function () {
-            $this->crud->addColumn('title');
+	    $this->crud->addColumn('title');
+	    $this->crud->addColumn('author');
+            $this->crud->addColumn([
+                'name' => 'social_media',
+                'label' => 'Social Media',
+                'type' => 'text',
+            ]);
             $this->crud->addColumn([
                 'name' => 'date',
                 'label' => 'Date',
@@ -102,6 +108,19 @@ class ArticleCrudController extends CrudController
                 'label' => 'Title',
                 'type' => 'text',
                 'placeholder' => 'Your title here',
+	    ]);
+	    $this->crud->addField([
+                'name' => 'author',
+                'label' => 'Author',
+                'type' => 'text',
+                'placeholder' => 'Written by...',
+            ]);
+            $this->crud->addField([
+                'name' => 'social_media',
+                'label' => 'Social Media',
+                'type' => 'text',
+                'placeholder' => 'Let your readers know where you hang',
+                'hint' => 'Let your readers know where you hang.',
             ]);
             $this->crud->addField([
                 'name' => 'slug',
