@@ -31,7 +31,7 @@ class Category extends Model
      *
      * @return array
      */
-    public function sluggable()
+    public function sluggable(): array
     {
         return [
             'slug' => [
@@ -76,8 +76,8 @@ class Category extends Model
     public function scopeFirstLevelItems($query)
     {
         return $query->where('depth', '1')
-                    ->orWhere('depth', null)
-                    ->orderBy('lft', 'ASC');
+            ->orWhere('depth', null)
+            ->orderBy('lft', 'ASC');
     }
 
     /*
