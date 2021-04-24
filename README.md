@@ -75,6 +75,7 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
 </li>
 ```
 
+7) [optional] If you need the browse field to upload images, please install [Laravel-Backpack/FileManager](https://github.com/Laravel-Backpack/FileManager#installation).
 
 
 #### Installation type (B) - package
@@ -109,6 +110,8 @@ php artisan migrate
     </ul>
 </li>
 ```
+
+5) [optional] If you need the browse field to upload images, please install [Laravel-Backpack/FileManager](https://github.com/Laravel-Backpack/FileManager#installation).
 
 
 
