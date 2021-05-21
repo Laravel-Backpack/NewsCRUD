@@ -123,6 +123,15 @@ class ArticleCrudController extends CrudController
                 'placeholder' => 'Your textarea text here',
             ]);
             $this->crud->addField([
+                'name' => 'excerpt',
+                'label' => 'Excerpt',
+                'type' => 'textarea',
+                'attributes' => [
+                    'maxlength' => 150,
+                ],
+                'placeholder' => 'The excerpt here',
+            ]);
+            $this->crud->addField([
                 'name' => 'image',
                 'label' => 'Image',
                 'type' => 'browse',
