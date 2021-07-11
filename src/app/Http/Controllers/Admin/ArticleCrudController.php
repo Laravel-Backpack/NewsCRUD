@@ -150,6 +150,7 @@ class ArticleCrudController extends CrudController
                 'name' => 'status',
                 'label' => 'Status',
                 'type' => 'enum',
+                'options' => ['PUBLISHED', 'DRAFT'], // only required for sqlite databases
             ]);
             $this->crud->addField([
                 'name' => 'featured',
