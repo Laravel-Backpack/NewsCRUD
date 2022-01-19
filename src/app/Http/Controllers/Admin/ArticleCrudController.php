@@ -162,6 +162,7 @@ class ArticleCrudController extends CrudController
 
     /**
      * Respond to AJAX calls from the select2 with entries from the Category model.
+     *
      * @return JSON
      */
     public function fetchCategory()
@@ -171,6 +172,7 @@ class ArticleCrudController extends CrudController
 
     /**
      * Respond to AJAX calls from the select2 with entries from the Tag model.
+     *
      * @return JSON
      */
     public function fetchTags()
