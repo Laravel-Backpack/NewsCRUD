@@ -14,7 +14,15 @@ An admin panel for news articles on Laravel 5-9, using [Backpack\CRUD](https://g
 > Please **[subscribe to the Backpack Newsletter](http://backpackforlaravel.com/newsletter)** so you can find out about any security updates, breaking changes or major features. We send an email every 1-2 months.
 
 
-## Install
+
+## Requirements
+
+This package requires both `backpack/crud` but also `backpack/pro` (the paid addon). If you do NOT have access to `backpack/pro` you can [purchase it here](https://backpackforlaravel.com/pricing). Alternatively, you can use the installation method (A), then:
+- remove all PRO features;
+- replace PRO fields with FREE fields;
+
+
+## Installation
 
 Since NewsCRUD is just a Backpack\CRUD example, you can choose to install it one of two ways.
 
