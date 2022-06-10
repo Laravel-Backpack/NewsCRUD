@@ -150,7 +150,10 @@ class ArticleCrudController extends CrudController
                 'name' => 'status',
                 'label' => 'Status',
                 'type' => 'select_from_array',
-                'options' => ['PUBLISHED', 'DRAFT'],
+                'options' => [
+                    'PUBLISHED' => 'PUBLISHED',
+                    'DRAFT' => 'DRAFT'
+                ],
             ]);
             $this->crud->addField([
                 'name' => 'featured',
