@@ -152,7 +152,7 @@ class ArticleCrudController extends CrudController
                 'type' => 'select_from_array',
                 'options' => [
                     'PUBLISHED' => 'PUBLISHED',
-                    'DRAFT' => 'DRAFT'
+                    'DRAFT' => 'DRAFT',
                 ],
             ]);
             $this->crud->addField([
