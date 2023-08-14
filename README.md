@@ -70,17 +70,15 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
 });
 ```
 
-6) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
+6) [optional] Add a menu item for it in resources/views/vendor/backpack/ui/inc/menu_items.blade.php:
 
 ```html
-<li class="nav-item nav-dropdown">
-    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-newspaper-o"></i>News</a>
-    <ul class="nav-dropdown-items">
-      <li class="nav-item"><a class="nav-link" href="{{ backpack_url('article') }}"><i class="nav-icon la la-newspaper-o"></i> Articles</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{ backpack_url('category') }}"><i class="nav-icon la la-list"></i> Categories</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{ backpack_url('tag') }}"><i class="nav-icon la la-tag"></i> Tags</a></li>
-    </ul>
-</li>
+<x-backpack::menu-dropdown title="Add-ons" icon="la la-puzzle-piece">
+    <x-backpack::menu-dropdown-header title="News" />
+    <x-backpack::menu-dropdown-item title="Articles" icon="la la-newspaper-o" :link="backpack_url('article')" />
+    <x-backpack::menu-dropdown-item title="Categories" icon="la la-list" :link="backpack_url('category')" />
+    <x-backpack::menu-dropdown-item title="Tags" icon="la la-tag" :link="backpack_url('tag')" />
+</x-backpack::menu-dropdown>
 ```
 
 7) [optional] If you need the browse field to upload images, please install [Laravel-Backpack/FileManager](https://github.com/Laravel-Backpack/FileManager#installation).
@@ -106,17 +104,15 @@ php artisan vendor:publish --provider="Backpack\NewsCRUD\NewsCRUDServiceProvider
 php artisan migrate
 ```
 
-4) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
+4) [optional] Add a menu item for it in resources/views/vendor/backpack/ui/inc/menu_items.blade.php:
 
 ```html
-<li class="nav-item nav-dropdown">
-    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-newspaper-o"></i>News</a>
-    <ul class="nav-dropdown-items">
-      <li class="nav-item"><a class="nav-link" href="{{ backpack_url('article') }}"><i class="nav-icon la la-newspaper-o"></i> Articles</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{ backpack_url('category') }}"><i class="nav-icon la la-list"></i> Categories</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{ backpack_url('tag') }}"><i class="nav-icon la la-tag"></i> Tags</a></li>
-    </ul>
-</li>
+<x-backpack::menu-dropdown title="Add-ons" icon="la la-puzzle-piece">
+    <x-backpack::menu-dropdown-header title="News" />
+    <x-backpack::menu-dropdown-item title="Articles" icon="la la-newspaper-o" :link="backpack_url('article')" />
+    <x-backpack::menu-dropdown-item title="Categories" icon="la la-list" :link="backpack_url('category')" />
+    <x-backpack::menu-dropdown-item title="Tags" icon="la la-tag" :link="backpack_url('tag')" />
+</x-backpack::menu-dropdown>
 ```
 
 5) [optional] If you need the browse field to upload images, please install [Laravel-Backpack/FileManager](https://github.com/Laravel-Backpack/FileManager#installation).
@@ -135,8 +131,8 @@ $ composer test
 
 ## Overwriting functionality
 
-If you need to modify how this works in a project: 
-- create a ```routes/backpack/newscrud.php``` file; the package will see that, and load _your_ routes file, instead of the one in the package; 
+If you need to modify how this works in a project:
+- create a ```routes/backpack/newscrud.php``` file; the package will see that, and load _your_ routes file, instead of the one in the package;
 - create controllers/models that extend the ones in the package, and use those in your new routes file;
 - modify anything you'd like in the new controllers/models;
 
