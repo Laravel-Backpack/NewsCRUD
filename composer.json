@@ -21,10 +21,10 @@
     "require": {
         "backpack/crud": "^6.0",
         "backpack/pro": "^2.0",
-        "cviebrock/eloquent-sluggable": "^10.0"
+        "cviebrock/eloquent-sluggable": "^10.0|^11.0"
     },
     "require-dev": {
-        "phpunit/phpunit" : "^9.0||^7.0",
+        "phpunit/phpunit" : "^10.0||^9.0||^7.0",
         "scrutinizer/ocular": "~1.1",
         "squizlabs/php_codesniffer": "~2.3||~3.0"
     },
