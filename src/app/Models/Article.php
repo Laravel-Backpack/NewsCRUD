@@ -26,8 +26,8 @@ class Article extends Model
     // protected $hidden = [];
     // protected $dates = [];
     protected $casts = [
-        'featured'  => 'boolean',
-        'date'      => 'date',
+        'featured' => 'boolean',
+        'date' => 'date',
     ];
 
     /**
