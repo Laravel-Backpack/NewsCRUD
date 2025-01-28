@@ -19,8 +19,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "backpack/crud": "^6.0",
-        "backpack/pro": "^2.0",
+        "backpack/crud": "7.0.0-alpha.1",
+        "backpack/pro": "3.0.0-alpha.2",
         "cviebrock/eloquent-sluggable": "^10.0|^11.0"
     },
     "require-dev": {
