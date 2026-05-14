@@ -3,8 +3,6 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 An admin panel for news articles on Laravel, using [Backpack\CRUD](https://github.com/Laravel-Backpack/crud). Write articles, with categories and tags.
@@ -165,14 +163,10 @@ If you are looking for a developer/team to help you build an admin panel on Lara
 [ico-version]: https://img.shields.io/packagist/v/backpack/NewsCRUD.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-dual-blue?style=flat-square
 [ico-travis]: https://img.shields.io/travis/com/laravel-backpack/newscrud
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/Laravel-Backpack/NewsCRUD.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/Laravel-Backpack/NewsCRUD.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/backpack/NewsCRUD.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/backpack/NewsCRUD
 [link-travis]: https://travis-ci.org/Laravel-Backpack/NewsCRUD
-[link-scrutinizer]: https://scrutinizer-ci.com/g/Laravel-Backpack/NewsCRUD/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/Laravel-Backpack/NewsCRUD
 [link-downloads]: https://packagist.org/packages/backpack/NewsCRUD
 [link-author]: https://github.com/tabacitu
 [link-contributors]: ../../contributors
